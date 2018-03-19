@@ -13,8 +13,7 @@ from github.pipelines import GithubPipeline
 from github.items import GitHubUserItem,GitHubRepItem
 
 
-startURL = ["https://github.com/EndlessCheng",
-           "https://github.com/splashinn"]
+startURL = config.START_URL_LIST
 
 githubBaseURL = "https://github.com"
 

@@ -63,9 +63,9 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'github.middlewares.GithubDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'github.middlewares.GitHubUserAgentMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -77,7 +77,7 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'github.pipelines.GithubPipeline': 300,
-'scrapy_redis.pipelines.RedisPipeline': 300,
+    'scrapy_redis.pipelines.RedisPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

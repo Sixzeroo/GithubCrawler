@@ -23,7 +23,7 @@ class GithubPipeline(object):
         self.collection1 = db['user']
         self.collection2 = db['rep']
         # Reids 配置
-        pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=0)
+        pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=1)
         self.redis_server = redis.Redis(connection_pool=pool)
         # Redis中导入MongoDB初始数据
         self.redis_server.flushdb()
