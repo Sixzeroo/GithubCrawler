@@ -26,7 +26,12 @@ class GithubPipeline(object):
         pool = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=1)
         self.redis_server = redis.Redis(connection_pool=pool)
         # Redis中导入MongoDB初始数据
-        self.redis_server.flushdb()
+        if(self.redis_server.exists("working") == 0):
+            self.redis_server.set("working", '0')
+        if(self.redis_server.get("working") == '0'):
+            self.redis_server.delete(REDIS_DATA_REP)
+            self.redis_server.delete(REDIS_DATA_USER)
+            self.redis_server.set("working", '1')
         if(self.redis_server.hlen(REDIS_DATA_USER) == 0):
             user_list = self.collection1.find({},{'user_id':1})
             for user in user_list:
