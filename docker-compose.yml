@@ -1,0 +1,8 @@
+version: "3"
+services:
+
+    env:
+        image: sixzeroo/github_crawler:0.1
+        volumes:
+         - "./github:/code"
+        command: scrapy crawl github
