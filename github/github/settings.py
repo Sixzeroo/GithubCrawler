@@ -9,6 +9,18 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
+from github import config
+
+# Enables scheduling storing requests queue in redis.
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+# Ensure all spiders share same duplicates filter through redis.
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+# Specify the host and port to use when connecting to Redis (optional).
+REDIS_HOST = config.REDIS_HOST
+REDIS_PORT = config.REDIS_PORT
+
 BOT_NAME = 'github'
 
 SPIDER_MODULES = ['github.spiders']
@@ -65,6 +77,7 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'github.pipelines.GithubPipeline': 300,
+'scrapy_redis.pipelines.RedisPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
