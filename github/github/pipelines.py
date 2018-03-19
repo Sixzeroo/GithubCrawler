@@ -28,10 +28,12 @@ class GithubPipeline(object):
         # Redis中导入MongoDB初始数据
         if(self.redis_server.exists("working") == 0):
             self.redis_server.set("working", '0')
-        if(self.redis_server.get("working") == '0'):
+        if(self.redis_server.get("working") == b'0'):
             self.redis_server.delete(REDIS_DATA_REP)
             self.redis_server.delete(REDIS_DATA_USER)
             self.redis_server.set("working", '1')
+        else:
+            return
         if(self.redis_server.hlen(REDIS_DATA_USER) == 0):
             user_list = self.collection1.find({},{'user_id':1})
             for user in user_list:
@@ -57,3 +59,6 @@ class GithubPipeline(object):
             self.collection2.insert(dict(item))
             self.redis_server.hset(REDIS_DATA_REP, item['user_id']+'/'+item['rep_name'], 0)
             return item
+
+    def __del__(self):
+        self.redis_server.set("working", '0')
