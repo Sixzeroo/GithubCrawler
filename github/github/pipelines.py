@@ -29,9 +29,7 @@ class GithubPipeline(object):
     def process_item(self, item, spider):
         if(isinstance(item, GitHubUserItem)):
             self.collection1.insert(dict(item))
-            self.redis_server.hset(REDIS_DATA_USER, item['user_id'], 0)
             return item
         elif(isinstance(item, GitHubRepItem)):
             self.collection2.insert(dict(item))
-            self.redis_server.hset(REDIS_DATA_REP, item['user_id']+'/'+item['rep_name'], 0)
             return item

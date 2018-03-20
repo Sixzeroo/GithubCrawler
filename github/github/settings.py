@@ -71,7 +71,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'github.pipelines.GithubPipeline': 300,
-    'scrapy_redis.pipelines.RedisPipeline': 300,
+    'github.distribute.pipelines.RedisPipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -95,9 +95,21 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+LOG_FILE='logs/spider.log'
+LOG_FORMAT= '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s'
+
 
 # Enables scheduling storing requests queue in redis.
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER = "github.distribute.scheduler.Scheduler"
 
 # Ensure all spiders share same duplicates filter through redis.
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+DUPEFILTER_CLASS = "github.distribute.dupefilter.RFPDupeFilter"
+
+# Schedule requests using a priority queue. (default)
+SCHEDULER_QUEUE_CLASS = 'github.distribute.queue.FifoQueue'
+
+# If True, it uses redis' ``SPOP`` operation. You have to use the ``SADD``
+# command to add URLs to the redis queue. This could be useful if you
+# want to avoid duplicates in your start urls list and the order of
+# processing does not matter.
+REDIS_START_URLS_AS_SET = False
