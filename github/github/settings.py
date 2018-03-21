@@ -119,3 +119,5 @@ REDIS_START_URLS_AS_SET = False
 
 # upperlimit of the num of requests in queue
 REQUEST_NUM = 500
+
+USEBLOOMFILTER = True
