@@ -32,11 +32,11 @@ class GithubSpider(scrapy.Spider):
     cookiejar = 1
     githubUser = config.GITHUBUSER
     passwd = config.GITHUBPASSWD
-    login = 0
+    login = False
 
     def start_requests(self):
         if(self.login):
-            return [scrapy.Request('https://github.com/login', meta={'cookiejar':1}, callback=self.parse_login)]
+            yield scrapy.Request('https://github.com/login', meta={'cookiejar':1}, callback=self.parse_login)
         else:
             yield scrapy.Request(startURL[0], headers=self.headers, meta={'cookiejar': self.cookiejar},
                                  callback=self.parse)
@@ -118,10 +118,18 @@ class GithubSpider(scrapy.Spider):
             'following_num' : followingNum
         }
         # convert to Item
-        github_user_item = convertUserDicttoItem(user_info)
+        github_user_item = GitHubUserItem()
+        github_user_item.getFromDict(user_info)
         yield github_user_item
 
         # printDict(user_info)
+
+        # 收藏列表解析
+        starsListURL = "https://github.com/"+id+"?tab=stars"
+        yield Request(url=starsListURL,
+                      headers=self.headers,
+                      meta={'cookiejar':self.cookiejar},
+                      callback=self.parse_stars_list)
 
         # 仓库列表解析
         repsListURL = "https://github.com/"+id+"?tab=repositories"
@@ -149,9 +157,9 @@ class GithubSpider(scrapy.Spider):
 
     # 解析具体的仓库rep
     def parse_rep(self, response):
-        user_id = response.meta['user_id']
+        user_id = response.xpath('//*[@class="url fn"]/text()').extract_first()
         rep_lang = response.meta['rep_lang']
-        rep_name = response.meta['rep_name']
+        rep_name = response.xpath('//*[@itemprop="name"]/a/text()').extract_first()
         rep_id = user_id+'/'+rep_name
         commits_num = stringStrip(response.xpath('//*[@class="num text-emphasized"]/text()').extract_first())
         forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract()[1])
@@ -166,9 +174,37 @@ class GithubSpider(scrapy.Spider):
             'forks_num': forks_num,
             'stars_num': stars_num
         }
-        github_rep_item = convertRepDicttoItem(rep_info)
+        github_rep_item = GitHubRepItem()
+        github_rep_item.getFromDict(rep_info)
         yield github_rep_item
         # printDict(rep_info)
+
+    # 解析stars 列表
+    def parse_stars_list(self, response):
+        stars_div_list = response.xpath('//*[@class="col-12 d-block width-full py-4 border-bottom"]')
+        for stars_div in stars_div_list:
+            rep_href = stars_div.xpath('./div/h3/a/@href').extract_first()
+            rep_url = githubBaseURL + rep_href
+            rep_lang = stars_div.xpath('./div/span/text()').extract_first()
+            rep_lang = stringStrip(rep_lang)
+            # 解析这个仓库
+            yield Request(url=rep_url,
+                          headers=self.headers,
+                          meta={'cookiejar': self.cookiejar,
+                                'rep_lang': rep_lang},
+                          callback=self.parse_rep
+                          )
+
+        # 获取下一个列表地址
+        next_href = response.xpath('//*[@class="next_page"]/@href').extract_first()
+        if (next_href is not None):
+            next_stars_list_url = githubBaseURL + next_href
+            yield Request(url=next_stars_list_url,
+                          headers=self.headers,
+                          meta={'cookiejar': self.cookiejar,
+                                'user_id': response.meta['user_id']},
+                          callback=self.parse_reps_list
+                          )
 
     # 解析reps 列表
     def parse_reps_list(self, response):

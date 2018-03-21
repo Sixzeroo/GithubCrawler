@@ -31,7 +31,7 @@ class GitHubUserItem(scrapy.Item):
         self['intro'] = user['intro']
         self['avatar_url'] = user['avatar_url']
         self['company'] = user['company']
-        self['reps_nums'] = user['reps_nums']
+        self['reps_num'] = user['reps_num']
         self['stars_num'] = user['stars_num']
         self['followers_num'] = user['followers_num']
         self['following_num'] = user['following_num']
