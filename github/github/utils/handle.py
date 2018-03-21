@@ -30,6 +30,12 @@ def printDict(input_dict):
         print("%s: %s,"%(key, input_dict[key]))
     print("}")
 
+# 精简图片URL
+def simplifyAvaUrl(url):
+    if url is None:
+        return ""
+    return url.split('?')[0]
+
 def convertUserDicttoItem(user):
     github_user_item = GitHubUserItem()
     github_user_item['user_id'] = user['user_id']

@@ -8,6 +8,7 @@
 from pymongo import MongoClient
 import redis
 from scrapy.exceptions import DropItem
+from scrapy import log
 
 from github.config import *
 from github.items import GitHubRepItem,GitHubUserItem

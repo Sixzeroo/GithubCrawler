@@ -80,6 +80,10 @@ class GithubSpider(scrapy.Spider):
         email = response.xpath('//*[@class="u-email"]/text()').extract_first()
         location = response.xpath('//*[@class="p-label"]/text()').extract_first()
         url = response.xpath('//*[@class="u-url"]/text()').extract_first()
+        intro = response.xpath('//*[@class="p-note user-profile-bio"]/div/text()').extract_first()
+        intro = stringStrip(intro)
+        avatar_url = response.xpath('//*[@class="avatar width-full rounded-2"]/@src').extract_first()
+        avatar_url = simplifyAvaUrl(avatar_url)
 
         # 获取公司信息
         company = []
@@ -105,6 +109,8 @@ class GithubSpider(scrapy.Spider):
             'email': email,
             'location' : location,
             'url' : url,
+            'intro': intro,
+            'avatar_url': avatar_url,
             'company': company,
             'reps_num' : repsNum,
             'stars_num' : starsNum,
@@ -146,13 +152,16 @@ class GithubSpider(scrapy.Spider):
         user_id = response.meta['user_id']
         rep_lang = response.meta['rep_lang']
         rep_name = response.meta['rep_name']
+        rep_id = user_id+'/'+rep_name
         commits_num = stringStrip(response.xpath('//*[@class="num text-emphasized"]/text()').extract_first())
         forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract()[1])
         stars_num = stringStrip(response.xpath('//*[@class="social-count js-social-count"]/text()').extract_first())
+
         rep_info = {
             'user_id': user_id,
             'rep_name': rep_name,
             'rep_lang': rep_lang,
+            'rep_id': rep_id,
             'commits_num': commits_num,
             'forks_num': forks_num,
             'stars_num': stars_num

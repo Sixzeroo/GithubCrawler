@@ -14,6 +14,8 @@ class GitHubUserItem(scrapy.Item):
     email = scrapy.Field()
     location = scrapy.Field()
     url = scrapy.Field()
+    intro = scrapy.Field()
+    avatar_url = scrapy.Field()
     company = scrapy.Field()
     reps_num = scrapy.Field()
     stars_num = scrapy.Field()
@@ -26,6 +28,8 @@ class GitHubUserItem(scrapy.Item):
         self['email'] = user['email']
         self['location'] = user['location']
         self['url'] = user['url']
+        self['intro'] = user['intro']
+        self['avatar_url'] = user['avatar_url']
         self['company'] = user['company']
         self['reps_nums'] = user['reps_nums']
         self['stars_num'] = user['stars_num']
@@ -38,6 +42,8 @@ class GitHubUserItem(scrapy.Item):
         res['email'] = self.email
         res['location'] = self.location
         res['url'] = self.url
+        res['intro'] = self.intro
+        res['avatar_url'] = set.avatar_url
         res['company'] = self.company
         res['reps_nums'] = self.reps_nums
         res['starts_num'] = self.starts_num
@@ -48,6 +54,7 @@ class GitHubRepItem(scrapy.Item):
     user_id = scrapy.Field()
     rep_name = scrapy.Field()
     rep_lang = scrapy.Field()
+    rep_id = scrapy.Field()
     commits_num = scrapy.Field()
     forks_num =scrapy.Field()
     stars_num = scrapy.Field()
@@ -56,14 +63,7 @@ class GitHubRepItem(scrapy.Item):
         self['user_id'] = rep['user_id']
         self['rep_name'] = rep['rep_name']
         self['rep_lang'] = rep['rep_lang']
+        self['rep_id'] = rep['rep_id']
         self['commits_num'] = rep['commits_num']
         self['forks_num'] = rep['forks_num']
         self['stars_num'] = rep['stars_num']
-
-    def convertDict(self):
-        res = {}
-        res['rep_name'] = self.rep_name
-        res['rep_lang'] = self.rep_lang
-        res['commits_num'] = self.commits_num
-        res['forks_num'] = self.forks_num
-        res['stars_num'] = self.stars_num
