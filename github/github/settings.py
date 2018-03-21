@@ -113,3 +113,6 @@ SCHEDULER_QUEUE_CLASS = 'github.distribute.queue.FifoQueue'
 # want to avoid duplicates in your start urls list and the order of
 # processing does not matter.
 REDIS_START_URLS_AS_SET = False
+
+# upperlimit of the num of requests in queue
+REQUEST_NUM = 500

@@ -3,6 +3,7 @@ import six
 
 from scrapy.utils.misc import load_object
 
+from github.settings import REQUEST_NUM
 from . import connection, defaults
 
 
@@ -75,6 +76,7 @@ class Scheduler(object):
         self.idle_before_close = idle_before_close
         self.serializer = serializer
         self.stats = None
+        self.request_limit = 50
 
     def __len__(self):
         return len(self.queue)
@@ -151,6 +153,9 @@ class Scheduler(object):
         self.queue.clear()
 
     def enqueue_request(self, request):
+        # set upper limit of request num
+        if len(self.queue) > REQUEST_NUM:
+            return False
         if not request.dont_filter and self.df.request_seen(request):
             self.df.log(request, self.spider)
             return False

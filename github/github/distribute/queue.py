@@ -87,6 +87,7 @@ class FifoQueue(Base):
             return self._decode_request(data)
 
 
+
 class PriorityQueue(Base):
     """Per-spider priority queue abstraction using redis' sorted set"""
 
