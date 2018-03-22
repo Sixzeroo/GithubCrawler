@@ -32,7 +32,7 @@ class GithubSpider(scrapy.Spider):
     cookiejar = 1
     githubUser = config.GITHUBUSER
     passwd = config.GITHUBPASSWD
-    login = False
+    login = True
 
     def start_requests(self):
         if(self.login):
@@ -162,8 +162,14 @@ class GithubSpider(scrapy.Spider):
         rep_name = response.xpath('//*[@itemprop="name"]/a/text()').extract_first()
         rep_id = user_id+'/'+rep_name
         commits_num = stringStrip(response.xpath('//*[@class="num text-emphasized"]/text()').extract_first())
-        forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract()[1])
+        commits_num = strNumtoInt(commits_num)
+        if (self.login == True) :
+            forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract_first())
+        else:
+            forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract()[1])
+        forks_num = strNumtoInt(forks_num)
         stars_num = stringStrip(response.xpath('//*[@class="social-count js-social-count"]/text()').extract_first())
+        stars_num = strNumtoInt(stars_num)
 
         rep_info = {
             'user_id': user_id,
@@ -201,8 +207,7 @@ class GithubSpider(scrapy.Spider):
             next_stars_list_url = githubBaseURL + next_href
             yield Request(url=next_stars_list_url,
                           headers=self.headers,
-                          meta={'cookiejar': self.cookiejar,
-                                'user_id': response.meta['user_id']},
+                          meta={'cookiejar': self.cookiejar},
                           callback=self.parse_reps_list
                           )
 

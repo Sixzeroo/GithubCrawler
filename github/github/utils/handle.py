@@ -10,6 +10,7 @@ def strNumtoInt(input_str):
     if(type(input_str) is not str):
         return 0
     input_str = input_str.strip()
+    input_str = input_str.replace(',','')
     try:
         res_num = int(input_str[:-1])*1000 if(input_str[-1] == 'k') else int(input_str)
     except ValueError:
