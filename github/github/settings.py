@@ -61,6 +61,7 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'github.middlewares.GitHubUserAgentMiddleware': 543,
+    'github.middlewares.GitHubCookieMiddleware': 400,
 }
 
 # Enable or disable extensions

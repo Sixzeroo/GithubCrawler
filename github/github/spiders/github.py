@@ -30,47 +30,12 @@ class GithubSpider(scrapy.Spider):
         "Referer": "https://github.com/session"
     }
     cookiejar = 1
-    githubUser = config.GITHUBUSER
-    passwd = config.GITHUBPASSWD
-    login = True
 
     def start_requests(self):
-        if(self.login):
-            yield scrapy.Request('https://github.com/login', meta={'cookiejar':1}, callback=self.parse_login)
-        else:
-            yield scrapy.Request(startURL[0], headers=self.headers, meta={'cookiejar': self.cookiejar},
-                                 callback=self.parse)
-            yield scrapy.Request(startURL[1], headers=self.headers, meta={'cookiejar': self.cookiejar},
-                                 callback=self.parse)
-
-    # 登录模块
-    def parse_login(self, response):
-        authenticity_token = response.css('form input[name="authenticity_token"]::attr(value)').extract_first()
-        self.log('authenticity_token:' + authenticity_token)
-        return [FormRequest.from_response(
-            response,
-            url='https://github.com/session',
-            headers=self.headers,
-            meta={'cookiejar': response.meta['cookiejar']},
-            formdata={
-                'commit': 'Sign+in',
-                'utf8': '✓',
-                'authenticity_token': authenticity_token,
-                'login': self.githubUser,
-                'password': self.passwd
-            },
-            callback=self.after_login,
-            dont_filter=True
-        )]
-
-    # 登录之后
-    def after_login(self, response):
-        self.cookiejar = response.meta['cookiejar']
-        self.log("使用账户%s登录成功\n"%self.githubUser)
-        yield scrapy.Request(startURL[0], headers=self.headers, meta={'cookiejar':self.cookiejar}, callback=self.parse)
-        yield scrapy.Request(startURL[1], headers=self.headers, meta={'cookiejar':self.cookiejar}, callback=self.parse)
-
-
+        yield scrapy.Request(startURL[0], headers=self.headers, meta={'cookiejar': self.cookiejar},
+                             callback=self.parse)
+        yield scrapy.Request(startURL[1], headers=self.headers, meta={'cookiejar': self.cookiejar},
+                             callback=self.parse)
     # 解析个人界面信息
     def parse(self, response):
         # 个人基本信息
@@ -233,7 +198,6 @@ class GithubSpider(scrapy.Spider):
                           headers=self.headers,
                           meta={'cookiejar': self.cookiejar,
                                 'rep_lang': rep_lang,
-                                'user_id': response.meta['user_id'],
                                 'rep_name': rep_name},
                           callback=self.parse_rep
                           )
@@ -244,8 +208,7 @@ class GithubSpider(scrapy.Spider):
             next_reps_list_url = githubBaseURL + next_href
             yield Request(url=next_reps_list_url,
                           headers=self.headers,
-                          meta={'cookiejar': self.cookiejar,
-                                'user_id': response.meta['user_id']},
+                          meta={'cookiejar': self.cookiejar},
                           callback=self.parse_reps_list
                           )
 

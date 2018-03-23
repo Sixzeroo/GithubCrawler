@@ -7,7 +7,7 @@ from github.items import GitHubRepItem,GitHubUserItem
 
 # follower、star数目记录
 def strNumtoInt(input_str):
-    if(type(input_str) is not str):
+    if(type(input_str) is not str or len(input_str) == 0):
         return 0
     input_str = input_str.strip()
     input_str = input_str.replace(',','')

@@ -5,12 +5,14 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-import random
+import random,redis,json
 
 from scrapy import signals
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from github.utils.useragent import agents
+from github.config import REDIS_PORT,REDIS_HOST,REDIS_COOKIE
 
 
 class GithubSpiderMiddleware(object):
@@ -112,3 +114,22 @@ class GitHubUserAgentMiddleware(UserAgentMiddleware):
     def process_request(self, request, spider):
         agent = random.choice(agents)
         request.headers['User-Agent'] = agent
+
+# Cookie 中间件
+class GitHubCookieMiddleware(RetryMiddleware):
+
+    def __init__(self,settings):
+        RetryMiddleware.__init__(self,settings)
+        self.rconn = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=3)
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler.settings)
+
+    def process_request(self, request, spider):
+        keys = self.rconn.hkeys(REDIS_COOKIE)
+        if(len(keys) > 0):
+            key = random.choice(keys)
+            value = self.rconn.hget(REDIS_COOKIE, key).decode('utf-8')
+            cookies = json.loads(value)
+            request.cookies = cookies
