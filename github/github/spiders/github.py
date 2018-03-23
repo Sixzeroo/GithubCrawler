@@ -30,6 +30,7 @@ class GithubSpider(scrapy.Spider):
         "Referer": "https://github.com/session"
     }
     cookiejar = 1
+    login = 1
 
     def start_requests(self):
         yield scrapy.Request(startURL[0], headers=self.headers, meta={'cookiejar': self.cookiejar},
@@ -215,7 +216,11 @@ class GithubSpider(scrapy.Spider):
 
     # 解析fllower 列表
     def parse_fllower_list(self, response):
-        person_hrefs = response.xpath('//*[@class="d-table col-12 width-full py-4 border-bottom border-gray-light"]/div[2]/a/@href').extract()
+        if self.login :
+            person_hrefs = response.xpath('//*[@class="d-table table-fixed col-12 width-full py-4 border-bottom border-gray-light"]/div[1]/a/@href').extract()
+        else:
+            person_hrefs = response.xpath('//*[@class="d-table col-12 width-full py-4 border-bottom border-gray-light"]/div[2]/a/@href').extract()
+
         for href in person_hrefs:
             url = "https://github.com"+href
             yield Request(url=url,
@@ -236,7 +241,11 @@ class GithubSpider(scrapy.Spider):
 
     # 解析fllowing 列表
     def parse_fllowing_list(self, response):
-        person_hrefs = response.xpath('//*[@class="d-table col-12 width-full py-4 border-bottom border-gray-light"]/div[2]/a/@href').extract()
+        if self.login :
+            person_hrefs = response.xpath('//*[@class="d-table table-fixed col-12 width-full py-4 border-bottom border-gray-light"]/div[1]/a/@href').extract()
+        else:
+            person_hrefs = response.xpath('//*[@class="d-table col-12 width-full py-4 border-bottom border-gray-light"]/div[2]/a/@href').extract()
+
         for href in person_hrefs:
             url = "https://github.com"+href
             yield Request(url=url,
