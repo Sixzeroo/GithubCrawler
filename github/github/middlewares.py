@@ -130,6 +130,8 @@ class GitHubCookieMiddleware(RetryMiddleware):
         keys = self.rconn.hkeys(REDIS_COOKIE)
         if(len(keys) > 0):
             key = random.choice(keys)
-            value = self.rconn.hget(REDIS_COOKIE, key).decode('utf-8')
+            value = self.rconn.hget(REDIS_COOKIE, key)
+            if( isinstance(value, bytes) ):
+                value = value.decode('utf-8')
             cookies = json.loads(value)
             request.cookies = cookies

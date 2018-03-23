@@ -122,3 +122,9 @@ REDIS_START_URLS_AS_SET = False
 REQUEST_NUM = 500
 
 USEBLOOMFILTER = False
+
+# STATS_CLASS = 'github.stats.graphite.RedisGraphiteStatsCollector'
+#
+# GRAPHITE_HOST = '127.0.0.1'
+# GRAPHITE_PORT = 2003
+# GRAPHITE_IGNOREKEYS = []

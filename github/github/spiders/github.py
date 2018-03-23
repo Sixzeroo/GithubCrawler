@@ -128,10 +128,8 @@ class GithubSpider(scrapy.Spider):
         rep_id = user_id+'/'+rep_name
         commits_num = stringStrip(response.xpath('//*[@class="num text-emphasized"]/text()').extract_first())
         commits_num = strNumtoInt(commits_num)
-        if (self.login == True) :
-            forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract_first())
-        else:
-            forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract()[1])
+        forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract_first())
+        # forks_num = stringStrip(response.xpath('//*[@class="social-count"]/text()').extract()[1])
         forks_num = strNumtoInt(forks_num)
         stars_num = stringStrip(response.xpath('//*[@class="social-count js-social-count"]/text()').extract_first())
         stars_num = strNumtoInt(stars_num)
