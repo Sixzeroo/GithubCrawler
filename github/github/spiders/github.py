@@ -171,7 +171,7 @@ class GithubSpider(scrapy.Spider):
             yield Request(url=next_stars_list_url,
                           headers=self.headers,
                           meta={'cookiejar': self.cookiejar},
-                          callback=self.parse_reps_list
+                          callback=self.parse_stars_list
                           )
 
     # 解析reps 列表
