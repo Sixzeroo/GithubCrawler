@@ -1,7 +1,9 @@
 asn1crypto==0.24.0
 attrs==17.4.0
 Automat==0.6.0
+certifi==2018.1.18
 cffi==1.11.5
+chardet==3.0.4
 constantly==15.1.0
 cryptography==2.1.4
 cssselect==1.0.3
@@ -18,10 +20,12 @@ pymongo==3.6.1
 pyOpenSSL==17.5.0
 queuelib==1.5.0
 redis==2.10.6
+requests==2.18.4
 Scrapy==1.5.0
 scrapy-redis==0.6.8
 service-identity==17.0.0
 six==1.11.0
 Twisted==17.9.0
+urllib3==1.22
 w3lib==1.19.0
 zope.interface==4.4.3

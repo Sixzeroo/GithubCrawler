@@ -12,7 +12,9 @@ from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 from scrapy.downloadermiddlewares.retry import RetryMiddleware
 
 from github.utils.useragent import agents
-from github.config import REDIS_PORT,REDIS_HOST,REDIS_COOKIE
+from github.config import REDIS_PORT,REDIS_HOST,REDIS_COOKIE,REDIS_COOKIE_INFO
+from github.settings import COOKIES_USE_LIMIT
+from github.cookie import get_login_cookie, init_cookie
 
 
 class GithubSpiderMiddleware(object):
@@ -128,10 +130,24 @@ class GitHubCookieMiddleware(RetryMiddleware):
 
     def process_request(self, request, spider):
         keys = self.rconn.hkeys(REDIS_COOKIE)
-        if(len(keys) > 0):
-            key = random.choice(keys)
-            value = self.rconn.hget(REDIS_COOKIE, key)
-            if( isinstance(value, bytes) ):
-                value = value.decode('utf-8')
-            cookies = json.loads(value)
-            request.cookies = cookies
+        if(len(keys) == 0):
+            init_cookie()
+        key = random.choice(keys)
+        # 获取当前key的cookie使用信息
+        cookie_info = self.rconn.hget(REDIS_COOKIE_INFO, key)
+        cookie_info = json.loads(cookie_info.decode('utf-8'))
+        # 判断是否到达界限
+        if(cookie_info['used_time'] >= COOKIES_USE_LIMIT):
+            new_cookie = get_login_cookie(key, cookie_info['passwd'])
+            self.rconn.hset(REDIS_COOKIE, key, new_cookie['value'])
+            cookie_info['used_time'] = 0
+        # 获取最新cookie
+        value = self.rconn.hget(REDIS_COOKIE, key)
+        if( isinstance(value, bytes) ):
+            value = value.decode('utf-8')
+        cookies = json.loads(value)
+        request.cookies = cookies
+        # 更新cookie使用信息
+        cookie_info['used_time'] = cookie_info['used_time'] + 1
+        cookie_info = json.dumps(cookie_info)
+        self.rconn.hset(REDIS_COOKIE_INFO, key, cookie_info)
