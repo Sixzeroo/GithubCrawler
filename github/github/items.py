@@ -21,6 +21,7 @@ class GitHubUserItem(scrapy.Item):
     stars_num = scrapy.Field()
     followers_num = scrapy.Field()
     following_num = scrapy.Field()
+    contr_num = scrapy.Field()
 
     def getFromDict(self, user):
         self['user_id'] = user['user_id']
@@ -35,6 +36,7 @@ class GitHubUserItem(scrapy.Item):
         self['stars_num'] = user['stars_num']
         self['followers_num'] = user['followers_num']
         self['following_num'] = user['following_num']
+        self['contr_num'] = user['contr_num']
 
     def convertDict(self):
         res = {}
@@ -58,6 +60,7 @@ class GitHubRepItem(scrapy.Item):
     commits_num = scrapy.Field()
     forks_num =scrapy.Field()
     stars_num = scrapy.Field()
+    forked = scrapy.Field()
 
     def getFromDict(self, rep):
         self['user_id'] = rep['user_id']
@@ -67,3 +70,4 @@ class GitHubRepItem(scrapy.Item):
         self['commits_num'] = rep['commits_num']
         self['forks_num'] = rep['forks_num']
         self['stars_num'] = rep['stars_num']
+        self['forked'] = rep['forked']

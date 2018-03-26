@@ -49,6 +49,9 @@ class GithubSpider(scrapy.Spider):
         intro = stringStrip(intro)
         avatar_url = response.xpath('//*[@class="avatar width-full rounded-2"]/@src').extract_first()
         avatar_url = simplifyAvaUrl(avatar_url)
+        contributions_str = response.xpath('//*[@class="f4 text-normal mb-2"]/text()').extract_first()
+        contr_num = contributions_str.strip().split(' ')[0]
+        contr_num = strNumtoInt(contr_num)
 
         # 获取公司信息
         company = []
@@ -80,7 +83,8 @@ class GithubSpider(scrapy.Spider):
             'reps_num' : repsNum,
             'stars_num' : starsNum,
             'followers_num' : followersNum,
-            'following_num' : followingNum
+            'following_num' : followingNum,
+            'contr_num': contr_num
         }
         # convert to Item
         github_user_item = GitHubUserItem()
@@ -126,6 +130,11 @@ class GithubSpider(scrapy.Spider):
         rep_lang = response.meta['rep_lang']
         rep_name = response.xpath('//*[@itemprop="name"]/a/text()').extract_first()
         rep_id = user_id+'/'+rep_name
+        fork_span = response.xpath('//*[@class="fork-flag"]')
+        if(len(fork_span) == 0):
+            forked = 0
+        else:
+            forked = 1
         commits_num = stringStrip(response.xpath('//*[@class="num text-emphasized"]/text()').extract_first())
         commits_num = strNumtoInt(commits_num)
         forks_num = response.xpath('//*[@class="social-count"]/text()').extract_first()
@@ -142,7 +151,8 @@ class GithubSpider(scrapy.Spider):
             'rep_id': rep_id,
             'commits_num': commits_num,
             'forks_num': forks_num,
-            'stars_num': stars_num
+            'stars_num': stars_num,
+            'forked': forked
         }
         github_rep_item = GitHubRepItem()
         github_rep_item.getFromDict(rep_info)

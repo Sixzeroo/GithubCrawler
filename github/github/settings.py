@@ -60,8 +60,8 @@ CONCURRENT_REQUESTS = 50
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'github.middlewares.GitHubUserAgentMiddleware': 543,
-    'github.middlewares.GitHubCookieMiddleware': 400,
+   'github.middlewares.GitHubUserAgentMiddleware': 400,
+    'github.middlewares.GitHubCookieMiddleware': 543,
 }
 
 # Enable or disable extensions
