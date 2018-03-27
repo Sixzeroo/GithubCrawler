@@ -130,8 +130,9 @@ class GitHubCookieMiddleware(RetryMiddleware):
 
     def process_request(self, request, spider):
         keys = self.rconn.hkeys(REDIS_COOKIE)
-        # if(len(keys) == 0):
-        #     init_cookie()
+        if(len(keys) == 0):
+            print("cookies don't work!")
+            return
         key = random.choice(keys)
         # 获取当前key的cookie使用信息
         cookie_info = self.rconn.hget(REDIS_COOKIE_INFO, key)
