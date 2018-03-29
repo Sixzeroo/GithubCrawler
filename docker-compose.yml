@@ -6,9 +6,3 @@ services:
         volumes:
          - "./github:/code"
         command: scrapy crawl github
-
-    crontab:
-        image: sixzeroo/github_crawler:0.1
-        volumes:
-         - "./github:/code"
-        command: yacron -c crontab.yaml
