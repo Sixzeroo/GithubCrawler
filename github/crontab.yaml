@@ -1,0 +1,5 @@
+jobs:
+  - name: updateCookie
+    command: ./updateCookie.sh
+    shell: /bin/bash
+    schedule: "* */4 * * *"
