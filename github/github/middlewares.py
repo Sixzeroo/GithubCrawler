@@ -134,21 +134,9 @@ class GitHubCookieMiddleware(RetryMiddleware):
             print("cookies don't work!")
             return
         key = random.choice(keys)
-        # 获取当前key的cookie使用信息
-        cookie_info = self.rconn.hget(REDIS_COOKIE_INFO, key)
-        cookie_info = json.loads(cookie_info.decode('utf-8'))
-        # 判断是否到达界限
-        if(cookie_info['used_time'] >= COOKIES_USE_LIMIT):
-            new_cookie = get_login_cookie(key, cookie_info['passwd'])
-            self.rconn.hset(REDIS_COOKIE, key, new_cookie['value'])
-            cookie_info['used_time'] = 0
         # 获取最新cookie
         value = self.rconn.hget(REDIS_COOKIE, key)
         if( isinstance(value, bytes) ):
             value = value.decode('utf-8')
         cookies = json.loads(value)
         request.cookies = cookies
-        # 更新cookie使用信息
-        cookie_info['used_time'] = cookie_info['used_time'] + 1
-        cookie_info = json.dumps(cookie_info)
-        self.rconn.hset(REDIS_COOKIE_INFO, key, cookie_info)

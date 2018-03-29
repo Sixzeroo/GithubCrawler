@@ -11,9 +11,10 @@ try:
 except:
     import http.cookiejar as cookielib
 
-
-from github.config import GITHUBACCOUNT,REDIS_HOST,REDIS_PORT,REDIS_COOKIE,REDIS_COOKIE_INFO
-
+try:
+    from github.config import GITHUBACCOUNT,REDIS_HOST,REDIS_PORT,REDIS_COOKIE,REDIS_COOKIE_INFO
+except :
+    from config import GITHUBACCOUNT,REDIS_HOST,REDIS_PORT,REDIS_COOKIE,REDIS_COOKIE_INFO
 
 BASE_URL = 'https://github.com/login'
 LOGIN_URL = 'https://github.com/session'
@@ -70,16 +71,10 @@ def init_cookie(account=GITHUBACCOUNT):
     client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=3)
     for i in account:
         cookie = get_login_cookie(i[0], i[1])
-        info = {
-            'passwd': i[1],
-            'used_time': 0
-        }
-        info_json = json.dumps(info)
         if(client.hset(REDIS_COOKIE, cookie['key'], cookie['value']) == 1):
             print("user %s cookie set"%i[0])
         else:
             print("user %s cookie update"%i[0])
-        client.hset(REDIS_COOKIE_INFO, i[0], info_json)
 
 if __name__ == '__main__':
     init_cookie(GITHUBACCOUNT)
