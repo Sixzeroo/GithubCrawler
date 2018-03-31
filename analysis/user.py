@@ -202,4 +202,8 @@ class ChinaUser(User):
 
 if __name__ == '__main__':
     test = User()
-    test.getCompanyInfo(10000)
+    test.followersRank()
+    test.followingRank()
+    test.starsRank()
+    test.repsRank()
+    test.contriRank()
