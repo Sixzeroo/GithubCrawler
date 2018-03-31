@@ -1,10 +1,14 @@
 # Github 爬虫数据分析
 
-Github作为世界上最大的"同性"交友网站，可以说是coder的天堂。这里爬取的数据主要有两大类：用户数据和仓库数据
+Github作为世界上最大的"同性"交友网站，可以说是coder的天堂。这里面的数据一定有许多有趣的地方。
+
+这里爬取的数据主要有两大类：用户数据和仓库数据，此次分析的数据量：256171用户数据，434994仓库数据
 
 ## 用户
 
-### Followers人数榜
+### 全球用户榜单
+
+#### Followers人数榜
 
 | Avatar | User | Repos | Stars | Followers | Following | Contributions|
 |--------|------|-------|-------|-----------|-----------|-----------|
@@ -19,7 +23,7 @@ Github作为世界上最大的"同性"交友网站，可以说是coder的天堂�
 |![](https://avatars2.githubusercontent.com/u/170270) | https://github.com/sindresorhus  |   975 | 2500 | 23600 | 50 | 4753 |
 |![](https://avatars1.githubusercontent.com/u/119893) | https://github.com/kennethreitz  |   141 | 1900 | 21200 | 197 | 5626 |
 
-### Following人数榜
+#### Following人数榜
 
 | Avatar | User | Repos | Stars | Followers | Following | Contributions|
 |--------|------|-------|-------|-----------|-----------|-----------|
@@ -34,7 +38,7 @@ Github作为世界上最大的"同性"交友网站，可以说是coder的天堂�
 |![](https://avatars1.githubusercontent.com/u/778015) | https://github.com/ahmetabdi  |   130 | 4100 | 448 | 53300 | 1954 |
 |![](https://avatars3.githubusercontent.com/u/4107768) | https://github.com/brunocasanova  |   46 | 152 | 2400 | 48300 | 13 |
 
-### Stars榜
+#### Stars榜
 
 看看谁收藏的仓库最多
 
@@ -51,7 +55,7 @@ Github作为世界上最大的"同性"交友网站，可以说是coder的天堂�
 |![](https://avatars3.githubusercontent.com/u/24416962) | https://github.com/roscopecoltran  |   156 | 21000 | 121 | 4400 | 599 |
 |![](https://avatars0.githubusercontent.com/u/6257454) | https://github.com/Jerzerak  |   1 | 18900 | 54 | 0 | 3 |
 
-### Reps榜
+#### Reps榜
 
 Github上创建仓库最多的人在这里
 
@@ -68,7 +72,7 @@ Github上创建仓库最多的人在这里
 |![](https://avatars3.githubusercontent.com/u/1332574) | https://github.com/treejames  |   8000 | 6900 | 93 | 897 | 101 |
 |![](https://avatars2.githubusercontent.com/u/498130) | https://github.com/mehulsbhatt  |   7400 | 364 | 23 | 9 | 104 |
 
-### Contribution榜
+#### Contribution榜
 
 | Avatar | User | Repos | Stars | Followers | Following | Contributions|
 |--------|------|-------|-------|-----------|-----------|-----------|
@@ -82,5 +86,86 @@ Github上创建仓库最多的人在这里
 |![](https://avatars1.githubusercontent.com/u/1317792) | https://github.com/xndcn  |   33 | 86 | 67 | 8 | 67634 |
 |![](https://avatars1.githubusercontent.com/u/3935007) | https://github.com/ojengwa  |   293 | 469 | 67 | 8 | 49621 |
 |![](https://avatars3.githubusercontent.com/u/10103766) | https://github.com/SergioChan  |   47 | 372 | 982 | 598 | 42202 |
+
+365天，天天绿是种怎样的体验？
+
+### 中国用户榜单
+
+这里只是通过location中"China"、"Shanghai"类似的关键词对中国用户进行区分，所以可能有遗漏的地方，还请谅解。此次统计的中国用户数据有18011
+
+#### Followers人数榜
+
+| Avatar | User | Repos | Stars | Followers | Following | Contributions|
+|--------|------|-------|-------|-----------|-----------|-----------|
+|![](https://avatars2.githubusercontent.com/u/905434) | https://github.com/ruanyf  |   48 | 206 | 38200 | 0 | 1645 |
+|![](https://avatars2.githubusercontent.com/u/499550) | https://github.com/yyx990803  |   141 | 779 | 29200 | 90 | 2553 |
+|![](https://avatars2.githubusercontent.com/u/2503423) | https://github.com/daimajia  |   63 | 2900 | 20000 | 241 | 21 |
+|![](https://avatars1.githubusercontent.com/u/470058) | https://github.com/michaelliao  |   61 | 81 | 19700 | 0 | 297 |
+|![](https://avatars0.githubusercontent.com/u/327019) | https://github.com/JacksonTian  |   229 | 583 | 15500 | 151 | 805 |
+|![](https://avatars1.githubusercontent.com/u/1169522) | https://github.com/Trinea  |   24 | 1500 | 14100 | 38 | 80 |
+|![](https://avatars2.githubusercontent.com/u/2267900) | https://github.com/stormzhang  |   5 | 1500 | 12800 | 91 | 9 |
+|![](https://avatars2.githubusercontent.com/u/97227) | https://github.com/lifesinger  |   2 | 278 | 12000 | 13 | 1 |
+|![](https://avatars2.githubusercontent.com/u/729648) | https://github.com/cloudwu  |   102 | 63 | 11700 | 1 | 690 |
+|![](https://avatars0.githubusercontent.com/u/472311) | https://github.com/phodal  |   254 | 1700 | 11100 | 15 | 5924 |
+
+#### Following人数榜
+
+| Avatar | User | Repos | Stars | Followers | Following | Contributions|
+|--------|------|-------|-------|-----------|-----------|-----------|
+|![](https://avatars2.githubusercontent.com/u/3693121) | https://github.com/fordream  |   724 | 21 | 919 | 19800 | 1 |
+|![](https://avatars2.githubusercontent.com/u/17972943) | https://github.com/Vermisse  |   15 | 25 | 2300 | 10400 | 102 |
+|![](https://avatars2.githubusercontent.com/u/93859) | https://github.com/technologiclee  |   149 | 844 | 374 | 9500 | 6 |
+|![](https://avatars3.githubusercontent.com/u/15626022) | https://github.com/shenzhoudance  |   599 | 6 | 108 | 7700 | 2373 |
+|![](https://avatars0.githubusercontent.com/u/10573715) | https://github.com/kotobukki  |   15 | 68 | 111 | 7500 | 889 |
+|![](https://avatars3.githubusercontent.com/u/29220207) | https://github.com/vincentpanqi  |   1800 | 714 | 47 | 5600 | 102 |
+|![](https://avatars2.githubusercontent.com/u/1727724) | https://github.com/ovwane  |   220 | 1100 | 120 | 5500 | 329 |
+|![](https://avatars0.githubusercontent.com/u/9153294) | https://github.com/pisual  |   39 | 62 | 917 | 4900 | 122 |
+|![](https://avatars0.githubusercontent.com/u/23236638) | https://github.com/youkaichao  |   39 | 0 | 58 | 4800 | 113 |
+|![](https://avatars0.githubusercontent.com/u/7576876) | https://github.com/bloodycoder  |   73 | 34 | 162 | 4200 | 390 |
+
+#### Stars榜
+
+| Avatar | User | Repos | Stars | Followers | Following | Contributions|
+|--------|------|-------|-------|-----------|-----------|-----------|
+|![](https://avatars3.githubusercontent.com/u/1041542) | https://github.com/weimingtom  |   2100 | 9100 | 172 | 1800 | 1724 |
+|![](https://avatars0.githubusercontent.com/u/2041398) | https://github.com/jiangplus  |   28 | 8800 | 85 | 115 | 13 |
+|![](https://avatars3.githubusercontent.com/u/1024948) | https://github.com/DavidAlphaFox  |   346 | 7800 | 167 | 83 | 1122 |
+|![](https://avatars1.githubusercontent.com/u/480859) | https://github.com/mayulu  |   12 | 7700 | 133 | 616 | 14 |
+|![](https://avatars2.githubusercontent.com/u/4370703) | https://github.com/hzy87email  |   73 | 7700 | 77 | 167 | 3 |
+|![](https://avatars3.githubusercontent.com/u/1468284) | https://github.com/se77en  |   197 | 7600 | 119 | 455 | 0 |
+|![](https://avatars0.githubusercontent.com/u/12030169) | https://github.com/JaredYeDH  |   166 | 7400 | 45 | 636 | 101 |
+|![](https://avatars2.githubusercontent.com/u/10380759) | https://github.com/xhs  |   20 | 7200 | 43 | 119 | 10 |
+|![](https://avatars2.githubusercontent.com/u/1881113) | https://github.com/paladin74  |   618 | 7100 | 52 | 901 | 1 |
+|![](https://avatars1.githubusercontent.com/u/3856) | https://github.com/mrluanma  |   12 | 7000 | 126 | 541 | 36 |
+
+#### Reps榜
+
+| Avatar | User | Repos | Stars | Followers | Following | Contributions|
+|--------|------|-------|-------|-----------|-----------|-----------|
+|![](https://avatars3.githubusercontent.com/u/10938976) | https://github.com/skyformat99  |   6000 | 143 | 98 | 3200 | 134 |
+|![](https://avatars1.githubusercontent.com/u/1203820) | https://github.com/tempbottle  |   4200 | 59 | 21 | 18 | 101 |
+|![](https://avatars3.githubusercontent.com/u/8662447) | https://github.com/JamesLinus  |   4100 | 1600 | 89 | 3300 | 181 |
+|![](https://avatars0.githubusercontent.com/u/12955801) | https://github.com/hu19891110  |   3600 | 90 | 11 | 112 | 107 |
+|![](https://avatars2.githubusercontent.com/u/452743) | https://github.com/WilliamRen  |   2900 | 3200 | 32 | 5 | 5 |
+|![](https://avatars3.githubusercontent.com/u/3414057) | https://github.com/chagge  |   2300 | 8 | 16 | 669 | 101 |
+|![](https://avatars2.githubusercontent.com/u/6813552) | https://github.com/forging2012  |   2200 | 789 | 8 | 71 | 151 |
+|![](https://avatars3.githubusercontent.com/u/1041542) | https://github.com/weimingtom  |   2100 | 9100 | 172 | 1800 | 1724 |
+|![](https://avatars1.githubusercontent.com/u/23429527) | https://github.com/isuhao  |   2000 | 153 | 62 | 2700 | 282 |
+|![](https://avatars1.githubusercontent.com/u/5791117) | https://github.com/ycaihua  |   1900 | 109 | 38 | 589 | 133 |
+
+#### Contribution榜
+
+| Avatar | User | Repos | Stars | Followers | Following | Contributions|
+|--------|------|-------|-------|-----------|-----------|-----------|
+|![](https://avatars3.githubusercontent.com/u/1006477) | https://github.com/felixonmars  |   420 | 369 | 806 | 149 | 70179 |
+|![](https://avatars3.githubusercontent.com/u/10103766) | https://github.com/SergioChan  |   47 | 372 | 982 | 598 | 42202 |
+|![](https://avatars1.githubusercontent.com/u/12693644) | https://github.com/dragon-yuan  |   16 | 109 | 35 | 50 | 18591 |
+|![](https://avatars1.githubusercontent.com/u/8347202) | https://github.com/fengss  |   30 | 67 | 15 | 1 | 12560 |
+|![](https://avatars0.githubusercontent.com/u/9410171) | https://github.com/xieguigang  |   41 | 115 | 136 | 143 | 10999 |
+|![](https://avatars2.githubusercontent.com/u/9280577) | https://github.com/csjunxu  |   194 | 81 | 35 | 51 | 9935 |
+|![](https://avatars3.githubusercontent.com/u/559179) | https://github.com/airyland  |   183 | 1400 | 996 | 175 | 8852 |
+|![](https://avatars1.githubusercontent.com/u/11537812) | https://github.com/yutiansut  |   216 | 1100 | 298 | 8 | 7311 |
+|![](https://avatars2.githubusercontent.com/u/1826685) | https://github.com/lloydzhou  |   92 | 556 | 52 | 69 | 6729 |
+|![](https://avatars1.githubusercontent.com/u/8784712) | https://github.com/egoist  |   647 | 2700 | 3600 | 40 | 6236 |
 
 ## 仓库

@@ -90,7 +90,7 @@ class User(object):
 
     # 选取认为是中国地区账号拉入新表中
     def selectChinaUser(self):
-        users = self.data.find().limit(10000)
+        users = self.data.find()
         for user in users:
             location = user['location']
             if location is not None:
@@ -99,6 +99,7 @@ class User(object):
                 for i in splited:
                     if i in CHINA_KEYWORD:
                         self.chinadata.insert(user)
+                        print("完成%s用户复制"%user['user_id'])
                         break
 
 
@@ -194,14 +195,18 @@ class ChinaUser(User):
 
     def __init__(self):
         self.db = MongoClient(MONGODB_HOST, MONGODB_PORT)["Test"]
-        self.data = self.testdb['user']
+        self.data = self.db['user']
+        self.file = open('./chinauser.md', 'w')
 
-
-
+    def __del__(self):
+        try:
+            self.file.close()
+        except AttributeError:
+            pass
 
 
 if __name__ == '__main__':
-    test = User()
+    test = ChinaUser()
     test.followersRank()
     test.followingRank()
     test.starsRank()
