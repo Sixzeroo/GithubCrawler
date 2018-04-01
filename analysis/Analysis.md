@@ -168,4 +168,23 @@ Github上创建仓库最多的人在这里
 |![](https://avatars2.githubusercontent.com/u/1826685) | https://github.com/lloydzhou  |   92 | 556 | 52 | 69 | 6729 |
 |![](https://avatars1.githubusercontent.com/u/8784712) | https://github.com/egoist  |   647 | 2700 | 3600 | 40 | 6236 |
 
+### 个人网站中顶级域名分布情况
+
+![](https://data2.liuin.cn/2018-04-01-15225621477939.jpg)
+
+### 用户公布邮箱情况
+
+![](https://data2.liuin.cn/2018-04-01-15225624252077.jpg)
+
+### 用户所在公司情况
+
+公布公司的前8
+
+![](https://data2.liuin.cn/2018-04-01-15225631364406.jpg)
+
+云图
+
+![](https://data2.liuin.cn/2018-04-01-15225635127953.jpg)
+
 ## 仓库
+

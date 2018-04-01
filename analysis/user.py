@@ -3,7 +3,7 @@
 # Author: Sixzeroo
 # website: www.liuin.cn
 
-import sys,re
+import sys,re,csv
 from pymongo import MongoClient
 
 from config import *
@@ -20,9 +20,12 @@ class User(object):
         self.testdb = MongoClient(MONGODB_HOST, MONGODB_PORT)["Test"]
         self.chinadata = self.testdb['user']
         self.file = open('./user.md', 'w')
+        self.csvfile = open("result.csv", "w")
+        self.csv = csv.writer(self.csvfile)
 
     def __del__(self):
         self.file.close()
+        self.csvfile.close()
 
     # 打印排行
     def printOut(self, res):
@@ -114,17 +117,25 @@ class User(object):
         else:
             users = self.data.find()
         top_domain_dict = {}
+        sum_num = 0
         for user in users:
             url = user['url']
             if url is not None:
                 domain = parseDomain(url)
+                # 排除github.io
+                if(domain == -1):
+                    continue
+                sum_num = sum_num + 1
                 if domain in top_domain_dict:
                     top_domain_dict[domain] = top_domain_dict[domain] + 1
                 else:
                     top_domain_dict[domain] = 1
         top_domain_info =sorted(top_domain_dict.items(), key=lambda d: d[1], reverse=True)
-        for domain in top_domain_info:
-            print("%s: %s"%(domain[0], domain[1]))
+        self.csv.writerow(['domain', 'num'])
+        for domain in top_domain_info[:10]:
+            self.csv.writerow([domain[0], str(domain[1])])
+            sum_num = sum_num - domain[1]
+        self.csv.writerow(['others', sum_num])
         return top_domain_info
 
 
@@ -139,6 +150,7 @@ class User(object):
         else:
             users = self.data.find()
         email_dict = {}
+        sum_num = 0
         for user in users:
             email = user['email']
             if email is None:
@@ -147,13 +159,17 @@ class User(object):
                 email = re.split('@', email)[1]
             except IndexError:
                 continue
+            sum_num = sum_num + 1
             if email in email_dict:
                 email_dict[email] = email_dict[email] + 1
             else:
                 email_dict[email] = 1
         email_info = sorted(email_dict.items(), key= lambda d: d[1], reverse=True)
-        for email in email_info:
-            print("%s: %s"%(email[0], email[1]))
+        self.csv.writerow(['email', 'num'])
+        for email in email_info[:10]:
+            self.csv.writerow([email[0], str(email[1])])
+            sum_num = sum_num - email[1]
+        self.csv.writerow(['others', str(sum_num)])
         return email_info
 
 
@@ -176,8 +192,9 @@ class User(object):
                 else:
                     company_dict[company] = 1
         company_info = sorted(company_dict.items(), key= lambda d: d[1], reverse=True)
-        for company in company_info:
-            print("%s: %s"%(company[0], company[1]))
+        self.csv.writerow(['company', 'num'])
+        for company in company_info[:100]:
+            self.csv.writerow([company[0], str(company[1])])
         return company_info
 
 
@@ -206,9 +223,5 @@ class ChinaUser(User):
 
 
 if __name__ == '__main__':
-    test = ChinaUser()
-    test.followersRank()
-    test.followingRank()
-    test.starsRank()
-    test.repsRank()
-    test.contriRank()
+    test = User()
+    test.getCompanyInfo()
