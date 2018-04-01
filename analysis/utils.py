@@ -14,7 +14,13 @@ def parseDomain(url):
     :return: 顶级域名（str）
     '''
     url = url.lower()
-    domain = re.split('//', url)[1]
-    domain = re.split('/', domain)[0]
-    top_domain = re.split('\.', domain)[-1]
+    try:
+        domain = re.split('//', url)[1]
+        domain = re.split('/', domain)[0]
+        top_domain = re.split('\.', domain)[-1]
+    except:
+        return -1
+    # 排除github.io
+    if(top_domain == 'io' and re.split('\.', domain)[-2] == 'github'):
+        return -1
     return top_domain
