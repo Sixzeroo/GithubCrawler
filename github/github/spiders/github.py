@@ -141,6 +141,7 @@ class GithubSpider(scrapy.Spider):
         if forks_num is None:
             forks_num = response.xpath('//*[@class="social-count"]/text()').extract()[1]
         forks_num = stringStrip(forks_num)
+        forks_num = strNumtoInt(forks_num)
         # 登录情况
         stars_num = response.xpath('//*[@class="unstarred js-social-form"]/a/text()').extract_first()
         # 未登录情况
