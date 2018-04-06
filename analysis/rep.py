@@ -30,7 +30,7 @@ class Rep(object):
         self.file.write("| Rep | User | Language | Stars | Fork | Commit | \n")
         self.file.write("|--------|------|-------|-------|-----------|-----------|\n")
         for rep in res:
-            self.file.write("|[%s](%s)|[%s](%s)|%s|%s|%s|%s|\n"%(rep['rep_id'], GithubBaseUrl+rep['rep_id'],
+            self.file.write("| [%s](%s) | [%s](%s) | %s | %s | %s | %s |\n"%(rep['rep_id'], GithubBaseUrl+rep['rep_id'],
                                                                rep['user_id'], GithubBaseUrl+rep['user_id'],
                                                                rep['rep_lang'], rep['stars_num'], rep['forks_num'],                                                     rep['commits_num']))
 
@@ -45,7 +45,7 @@ class Rep(object):
 
     # 指定语言被收藏仓库排行
     def starsLangRank(self, lang, rank=10):
-        res = self.data.find({'forked': 0, 'lang': lang}).sort('stars_num', -1).limit(rank)
+        res = self.data.find({'forked': 0, 'rep_lang': lang}).sort('stars_num', -1).limit(rank)
         # 打印当前函数名
         self.file.write(sys._getframe().f_code.co_name + '\n')
         self.printOut(res)
@@ -59,7 +59,7 @@ class Rep(object):
 
     # 指定语言被Fork排行
     def forkLangRank(self, lang, rank=10):
-        res = self.data.find({'forked': 0, 'lang': lang}).sort('forks_num', -1).limit(rank)
+        res = self.data.find({'forked': 0, 'rep_lang': lang}).sort('forks_num', -1).limit(rank)
         # 打印当前函数名
         self.file.write(sys._getframe().f_code.co_name + '\n')
         self.printOut(res)
@@ -73,15 +73,17 @@ class Rep(object):
         resdict = {}
         sum_num = 0
         for rep in res:
-            lang = rep['lang']
+            lang = rep['rep_lang']
             sum_num = sum_num + 1
             if lang in resdict :
                 resdict[lang] = resdict[lang] + 1
             else:
                 resdict[lang] = 1
         lang_info = sorted(resdict.items(), key=lambda d:d[1], reverse=True)
-        self.csv.writerow(['lang', 'num'])
-        for lang in lang_info:
+        self.csv.writerow(['rep_lang', 'num'])
+        for lang in lang_info[:11]:
+            if(lang[0] == ''):
+                continue
             self.csv.writerow([lang[0], str(lang[1])])
         return lang_info
 
@@ -94,21 +96,35 @@ class Rep(object):
         resdict = {}
         sum_num = 0
         for rep in res:
-            lang = rep['lang']
+            lang = rep['rep_lang']
             sum_num = sum_num + 1
             if lang in resdict:
                 resdict[lang] = resdict[lang] + 1
             else:
                 resdict[lang] = 1
         lang_info = sorted(resdict.items(), key=lambda d: d[1], reverse=True)
-        self.csv.writerow(['lang', 'num'])
-        for lang in lang_info:
+        self.csv.writerow(['rep_lang', 'num'])
+        for lang in lang_info[:11]:
+            if (lang[0] == ''):
+                continue
             self.csv.writerow([lang[0], str(lang[1])])
         return lang_info
+
+    # 更换数据类型
+    def changeType(self):
+        res = self.data.find()
+        base_num = 0
+        for each in res:
+            if isinstance(each['forks_num'], int):
+                continue
+            each['forks_num'] = each['forks_num'].replace(',','')
+            each['forks_num'] = int(each['forks_num'])
+            base_num = base_num + 1
+            print("complete %s"%base_num)
+            self.data.save(each)
 
 
 
 if __name__ == '__main__':
     test = Rep()
-    test.starsRank()
-    test.forkRank()
+    test.langInfoByForked(10000)

@@ -188,3 +188,218 @@ Github上创建仓库最多的人在这里
 
 ## 仓库
 
+### Stars榜
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | [freeCodeCamp](https://github.com/freeCodeCamp) | JavaScript | 291895 | 13667 | 11334 |
+| [twbs/bootstrap](https://github.com/twbs/bootstrap) | [twbs](https://github.com/twbs) | CSS | 123341 | 58717 | 17645 |
+| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | [EbookFoundation](https://github.com/EbookFoundation) |  | 103480 | 26331 | 4634 |
+| [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | [tensorflow](https://github.com/tensorflow) | C++ | 95028 | 60694 | 30887 |
+| [facebook/react](https://github.com/facebook/react) | [facebook](https://github.com/facebook) | JavaScript | 92602 | 17473 | 9773 |
+| [vuejs/vue](https://github.com/vuejs/vue) | [vuejs](https://github.com/vuejs) | JavaScript | 89447 | 13129 | 2581 |
+| [sindresorhus/awesome](https://github.com/sindresorhus/awesome) | [sindresorhus](https://github.com/sindresorhus) |  | 82141 | 10785 | 725 |
+| [getify/You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS) | [getify](https://github.com/getify) |  | 78848 | 14404 | 1465 |
+| [d3/d3](https://github.com/d3/d3) | [d3](https://github.com/d3) | JavaScript | 74472 | 19024 | 4132 |
+| [airbnb/javascript](https://github.com/airbnb/javascript) | [airbnb](https://github.com/airbnb) | JavaScript | 68833 | 13127 | 1607 |
+
+### Forks榜
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [jtleek/datasharing](https://github.com/jtleek/datasharing) | [jtleek](https://github.com/jtleek) |  | 4332 | 184409 | 29 |
+| [rdpeng/ProgrammingAssignment2](https://github.com/rdpeng/ProgrammingAssignment2) | [rdpeng](https://github.com/rdpeng) | R | 528 | 110145 | 7 |
+| [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) | [octocat](https://github.com/octocat) | HTML | 10043 | 97471 | 3 |
+| [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | [tensorflow](https://github.com/tensorflow) | C++ | 95028 | 60694 | 30887 |
+| [twbs/bootstrap](https://github.com/twbs/bootstrap) | [twbs](https://github.com/twbs) | CSS | 123341 | 58717 | 17645 |
+| [SmartThingsCommunity/SmartThingsPublic](https://github.com/SmartThingsCommunity/SmartThingsPublic) | [SmartThingsCommunity](https://github.com/SmartThingsCommunity) | Groovy | 853 | 38018 | 2448 |
+| [rdpeng/RepData_PeerAssessment1](https://github.com/rdpeng/RepData_PeerAssessment1) | [rdpeng](https://github.com/rdpeng) |  | 69 | 29883 | 13 |
+| [github/gitignore](https://github.com/github/gitignore) | [github](https://github.com/github) |  | 63853 | 29259 | 2738 |
+| [angular/angular.js](https://github.com/angular/angular.js) | [angular](https://github.com/angular) | JavaScript | 58232 | 28872 | 8755 |
+| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | [EbookFoundation](https://github.com/EbookFoundation) |  | 103480 | 26331 | 4634 |
+
+### C
+
+stars排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [torvalds/linux](https://github.com/torvalds/linux) | [torvalds](https://github.com/torvalds) | C | 57191 | 21032 | 744803 |
+| [firehol/netdata](https://github.com/firehol/netdata) | [firehol](https://github.com/firehol) | C | 28607 | 2389 | 6690 |
+| [antirez/redis](https://github.com/antirez/redis) | [antirez](https://github.com/antirez) | C | 28340 | 10916 | 6679 |
+| [git/git](https://github.com/git/git) | [git](https://github.com/git) | C | 21665 | 12634 | 50674 |
+| [Bilibili/ijkplayer](https://github.com/Bilibili/ijkplayer) | [Bilibili](https://github.com/Bilibili) | C | 18374 | 5191 | 2584 |
+| [php/php-src](https://github.com/php/php-src) | [php](https://github.com/php) | C | 16996 | 4745 | 107206 |
+| [SamyPesse/How-to-Make-a-Computer-Operating-System](https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System) | [SamyPesse](https://github.com/SamyPesse) | C | 16957 | 3015 | 243 |
+| [wg/wrk](https://github.com/wg/wrk) | [wg](https://github.com/wg) | C | 15386 | 1245 | 72 |
+| [ggreer/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) | [ggreer](https://github.com/ggreer) | C | 14854 | 954 | 1974 |
+| [kripken/emscripten](https://github.com/kripken/emscripten) | [kripken](https://github.com/kripken) | C | 14373 | 1704 | 18154 |
+
+forks排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [torvalds/linux](https://github.com/torvalds/linux) | [torvalds](https://github.com/torvalds) | C | 57191 | 21032 | 744803 |
+| [git/git](https://github.com/git/git) | [git](https://github.com/git) | C | 21665 | 12634 | 50674 |
+| [antirez/redis](https://github.com/antirez/redis) | [antirez](https://github.com/antirez) | C | 28340 | 10916 | 6679 |
+| [arduino/Arduino](https://github.com/arduino/Arduino) | [arduino](https://github.com/arduino) | C | 7936 | 6184 | 6649 |
+| [julycoding/The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July) | [julycoding](https://github.com/julycoding) | C | 13544 | 5666 | 3630 |
+| [MarlinFirmware/Marlin](https://github.com/MarlinFirmware/Marlin) | [MarlinFirmware](https://github.com/MarlinFirmware) | C | 3615 | 5340 | 9015 |
+| [Bilibili/ijkplayer](https://github.com/Bilibili/ijkplayer) | [Bilibili](https://github.com/Bilibili) | C | 18374 | 5191 | 2584 |
+| [php/php-src](https://github.com/php/php-src) | [php](https://github.com/php) | C | 16996 | 4745 | 107206 |
+| [esp8266/Arduino](https://github.com/esp8266/Arduino) | [esp8266](https://github.com/esp8266) | C | 7063 | 4378 | 2697 |
+| [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) | [FFmpeg](https://github.com/FFmpeg) | C | 10314 | 4377 | 90611 |
+
+### C++
+
+stars排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | [tensorflow](https://github.com/tensorflow) | C++ | 95028 | 60694 | 30887 |
+| [electron/electron](https://github.com/electron/electron) | [electron](https://github.com/electron) | C++ | 58531 | 7642 | 18669 |
+| [apple/swift](https://github.com/apple/swift) | [apple](https://github.com/apple) | C++ | 43250 | 6795 | 68510 |
+| [nwjs/nw.js](https://github.com/nwjs/nw.js) | [nwjs](https://github.com/nwjs) | C++ | 33478 | 3731 | 3188 |
+| [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) | [x64dbg](https://github.com/x64dbg) | C++ | 33242 | 684 | 3923 |
+| [bitcoin/bitcoin](https://github.com/bitcoin/bitcoin) | [bitcoin](https://github.com/bitcoin) | C++ | 30209 | 18101 | 16629 |
+| [google/protobuf](https://github.com/google/protobuf) | [google](https://github.com/google) | C++ | 24950 | 7150 | 5557 |
+| [BVLC/caffe](https://github.com/BVLC/caffe) | [BVLC](https://github.com/BVLC) | C++ | 23550 | 14390 | 4118 |
+| [opencv/opencv](https://github.com/opencv/opencv) | [opencv](https://github.com/opencv) | C++ | 23493 | 16901 | 23654 |
+| [rethinkdb/rethinkdb](https://github.com/rethinkdb/rethinkdb) | [rethinkdb](https://github.com/rethinkdb) | C++ | 20993 | 1665 | 33382 |
+
+forks排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [tensorflow/tensorflow](https://github.com/tensorflow/tensorflow) | [tensorflow](https://github.com/tensorflow) | C++ | 95028 | 60694 | 30887 |
+| [bitcoin/bitcoin](https://github.com/bitcoin/bitcoin) | [bitcoin](https://github.com/bitcoin) | C++ | 30209 | 18101 | 16629 |
+| [opencv/opencv](https://github.com/opencv/opencv) | [opencv](https://github.com/opencv) | C++ | 23493 | 16901 | 23654 |
+| [BVLC/caffe](https://github.com/BVLC/caffe) | [BVLC](https://github.com/BVLC) | C++ | 23550 | 14390 | 4118 |
+| [electron/electron](https://github.com/electron/electron) | [electron](https://github.com/electron) | C++ | 58531 | 7642 | 18669 |
+| [google/protobuf](https://github.com/google/protobuf) | [google](https://github.com/google) | C++ | 24950 | 7150 | 5557 |
+| [apple/swift](https://github.com/apple/swift) | [apple](https://github.com/apple) | C++ | 43250 | 6795 | 68510 |
+| [cocos2d/cocos2d-x](https://github.com/cocos2d/cocos2d-x) | [cocos2d](https://github.com/cocos2d) | C++ | 11759 | 6496 | 36641 |
+| [ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot) | [ArduPilot](https://github.com/ArduPilot) | C++ | 3110 | 6153 | 31379 |
+| [dmlc/xgboost](https://github.com/dmlc/xgboost) | [dmlc](https://github.com/dmlc) | C++ | 11406 | 5192 | 3254 |
+
+### Java
+
+stars排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [ReactiveX/RxJava](https://github.com/ReactiveX/RxJava) | [ReactiveX](https://github.com/ReactiveX) | Java | 32001 | 5594 | 5328 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | [iluwatar](https://github.com/iluwatar) | Java | 31422 | 10072 | 2022 |
+| [elastic/elasticsearch](https://github.com/elastic/elasticsearch) | [elastic](https://github.com/elastic) | Java | 29931 | 10408 | 30528 |
+| [square/retrofit](https://github.com/square/retrofit) | [square](https://github.com/square) | Java | 27182 | 5311 | 1569 |
+| [square/okhttp](https://github.com/square/okhttp) | [square](https://github.com/square) | Java | 25870 | 6054 | 3147 |
+| [google/guava](https://github.com/google/guava) | [google](https://github.com/google) | Java | 23154 | 5323 | 4676 |
+| [spring-projects/spring-boot](https://github.com/spring-projects/spring-boot) | [spring-projects](https://github.com/spring-projects) | Java | 22927 | 17555 | 16129 |
+| [PhilJay/MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) | [PhilJay](https://github.com/PhilJay) | Java | 21393 | 5939 | 1938 |
+| [kdn251/interviews](https://github.com/kdn251/interviews) | [kdn251](https://github.com/kdn251) | Java | 21348 | 3503 | 370 |
+| [bumptech/glide](https://github.com/bumptech/glide) | [bumptech](https://github.com/bumptech) | Java | 21032 | 4132 | 2190 |
+
+forks排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [spring-projects/spring-boot](https://github.com/spring-projects/spring-boot) | [spring-projects](https://github.com/spring-projects) | Java | 22927 | 17555 | 16129 |
+| [spring-projects/spring-framework](https://github.com/spring-projects/spring-framework) | [spring-projects](https://github.com/spring-projects) | Java | 20126 | 13328 | 16384 |
+| [apache/incubator-dubbo](https://github.com/apache/incubator-dubbo) | [apache](https://github.com/apache) | Java | 17706 | 12714 | 2201 |
+| [elastic/elasticsearch](https://github.com/elastic/elasticsearch) | [elastic](https://github.com/elastic) | Java | 29931 | 10408 | 30528 |
+| [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns) | [iluwatar](https://github.com/iluwatar) | Java | 31422 | 10072 | 2022 |
+| [eugenp/tutorials](https://github.com/eugenp/tutorials) | [eugenp](https://github.com/eugenp) | Java | 4950 | 8411 | 7809 |
+| [zxing/zxing](https://github.com/zxing/zxing) | [zxing](https://github.com/zxing) | Java | 18000 | 7345 | 3425 |
+| [nostra13/Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader) | [nostra13](https://github.com/nostra13) | Java | 16040 | 6476 | 1025 |
+| [checkstyle/checkstyle](https://github.com/checkstyle/checkstyle) | [checkstyle](https://github.com/checkstyle) | Java | 3597 | 6402 | 7658 |
+| [netty/netty](https://github.com/netty/netty) | [netty](https://github.com/netty) | Java | 13422 | 6122 | 8723 |
+
+### Python
+
+stars排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [vinta/awesome-python](https://github.com/vinta/awesome-python) | [vinta](https://github.com/vinta) | Python | 47930 | 9270 | 1222 |
+| [rg3/youtube-dl](https://github.com/rg3/youtube-dl) | [rg3](https://github.com/rg3) | Python | 35575 | 6532 | 16048 |
+| [toddmotto/public-apis](https://github.com/toddmotto/public-apis) | [toddmotto](https://github.com/toddmotto) | Python | 35115 | 3319 | 1760 |
+| [jakubroztocil/httpie](https://github.com/jakubroztocil/httpie) | [jakubroztocil](https://github.com/jakubroztocil) | Python | 34746 | 2362 | 965 |
+| [nvbn/thefuck](https://github.com/nvbn/thefuck) | [nvbn](https://github.com/nvbn) | Python | 34601 | 1723 | 1463 |
+| [pallets/flask](https://github.com/pallets/flask) | [pallets](https://github.com/pallets) | Python | 34411 | 10562 | 3205 |
+| [django/django](https://github.com/django/django) | [django](https://github.com/django) | Python | 32956 | 13953 | 25601 |
+| [tensorflow/models](https://github.com/tensorflow/models) | [tensorflow](https://github.com/tensorflow) | Python | 32262 | 17985 | 2109 |
+| [josephmisiti/awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning) | [josephmisiti](https://github.com/josephmisiti) | Python | 31793 | 7780 | 1033 |
+| [requests/requests](https://github.com/requests/requests) | [requests](https://github.com/requests) | Python | 31508 | 5824 | 5416 |
+
+forks排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [tensorflow/models](https://github.com/tensorflow/models) | [tensorflow](https://github.com/tensorflow) | Python | 32262 | 17985 | 2109 |
+| [shadowsocks/shadowsocks](https://github.com/shadowsocks/shadowsocks) | [shadowsocks](https://github.com/shadowsocks) | Python | 24278 | 15499 | 1 |
+| [django/django](https://github.com/django/django) | [django](https://github.com/django) | Python | 32956 | 13953 | 25601 |
+| [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) | [scikit-learn](https://github.com/scikit-learn) | Python | 27088 | 13623 | 22684 |
+| [ansible/ansible](https://github.com/ansible/ansible) | [ansible](https://github.com/ansible) | Python | 29373 | 10728 | 36562 |
+| [pallets/flask](https://github.com/pallets/flask) | [pallets](https://github.com/pallets) | Python | 34411 | 10562 | 3205 |
+| [keras-team/keras](https://github.com/keras-team/keras) | [keras-team](https://github.com/keras-team) | Python | 27833 | 10213 | 4442 |
+| [udacity/fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) | [udacity](https://github.com/udacity) | Python | 202 | 9370 | 53 |
+| [vinta/awesome-python](https://github.com/vinta/awesome-python) | [vinta](https://github.com/vinta) | Python | 47930 | 9270 | 1222 |
+| [odoo/odoo](https://github.com/odoo/odoo) | [odoo](https://github.com/odoo) | Python | 9200 | 7889 | 115520 |
+
+### JavaScript
+
+stars排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | [freeCodeCamp](https://github.com/freeCodeCamp) | JavaScript | 291895 | 13667 | 11334 |
+| [facebook/react](https://github.com/facebook/react) | [facebook](https://github.com/facebook) | JavaScript | 92602 | 17473 | 9773 |
+| [vuejs/vue](https://github.com/vuejs/vue) | [vuejs](https://github.com/vuejs) | JavaScript | 89447 | 13129 | 2581 |
+| [d3/d3](https://github.com/d3/d3) | [d3](https://github.com/d3) | JavaScript | 74472 | 19024 | 4132 |
+| [airbnb/javascript](https://github.com/airbnb/javascript) | [airbnb](https://github.com/airbnb) | JavaScript | 68833 | 13127 | 1607 |
+| [facebook/react-native](https://github.com/facebook/react-native) | [facebook](https://github.com/facebook) | JavaScript | 62128 | 14129 | 13166 |
+| [angular/angular.js](https://github.com/angular/angular.js) | [angular](https://github.com/angular) | JavaScript | 58232 | 28872 | 8755 |
+| [jquery/jquery](https://github.com/jquery/jquery) | [jquery](https://github.com/jquery) | JavaScript | 48560 | 15318 | 6316 |
+| [nodejs/node](https://github.com/nodejs/node) | [nodejs](https://github.com/nodejs) | JavaScript | 47212 | 9904 | 21744 |
+| [facebook/create-react-app](https://github.com/facebook/create-react-app) | [facebook](https://github.com/facebook) | JavaScript | 46391 | 9259 | 1484 |
+
+forks排行
+
+| Rep | User | Language | Stars | Fork | Commit |
+|--------|------|-------|-------|-----------|-----------|
+| [angular/angular.js](https://github.com/angular/angular.js) | [angular](https://github.com/angular) | JavaScript | 58232 | 28872 | 8755 |
+| [udacity/frontend-nanodegree-resume](https://github.com/udacity/frontend-nanodegree-resume) | [udacity](https://github.com/udacity) | JavaScript | 915 | 25814 | 84 |
+| [d3/d3](https://github.com/d3/d3) | [d3](https://github.com/d3) | JavaScript | 74472 | 19024 | 4132 |
+| [facebook/react](https://github.com/facebook/react) | [facebook](https://github.com/facebook) | JavaScript | 92602 | 17473 | 9773 |
+| [jquery/jquery](https://github.com/jquery/jquery) | [jquery](https://github.com/jquery) | JavaScript | 48560 | 15318 | 6316 |
+| [nightscout/cgm-remote-monitor](https://github.com/nightscout/cgm-remote-monitor) | [nightscout](https://github.com/nightscout) | JavaScript | 439 | 15228 | 4505 |
+| [mrdoob/three.js](https://github.com/mrdoob/three.js) | [mrdoob](https://github.com/mrdoob) | JavaScript | 40668 | 15152 | 22927 |
+| [facebook/react-native](https://github.com/facebook/react-native) | [facebook](https://github.com/facebook) | JavaScript | 62128 | 14129 | 13166 |
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | [freeCodeCamp](https://github.com/freeCodeCamp) | JavaScript | 291895 | 13667 | 11334 |
+| [vuejs/vue](https://github.com/vuejs/vue) | [vuejs](https://github.com/vuejs) | JavaScript | 89447 | 13129 | 2581 |
+
+### 语言使用比例
+
+stars 超过100的
+
+![](https://data2.liuin.cn/2018-04-06-15229847469176.jpg)
+
+stars 超过1000的
+
+![](https://data2.liuin.cn/2018-04-06-15229848318605.jpg)
+
+stars 超过10000的
+
+![](https://data2.liuin.cn/2018-04-06-15229848710272.jpg)
+
+forks 超过100的
+
+![](https://data2.liuin.cn/2018-04-06-15229849187089.jpg)
+
+forks 超过1000的
+
+![](https://data2.liuin.cn/2018-04-06-15229849529776.jpg)
+
+forks 超过10000的
+
+![](https://data2.liuin.cn/2018-04-06-15229849860861.jpg)
