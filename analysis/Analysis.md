@@ -4,6 +4,35 @@ Github作为世界上最大的"同性"交友网站，可以说是coder的天堂�
 
 这里爬取的数据主要有两大类：用户数据和仓库数据，此次分析的数据量：256171用户数据，434994仓库数据
 
+## 目录
+
+   * [Github 爬虫数据分析](#github-爬虫数据分析)
+      * [用户](#用户)
+         * [全球用户榜单](#全球用户榜单)
+            * [Followers人数榜](#followers人数榜)
+            * [Following人数榜](#following人数榜)
+            * [Stars榜](#stars榜)
+            * [Reps榜](#reps榜)
+            * [Contribution榜](#contribution榜)
+         * [中国用户榜单](#中国用户榜单)
+            * [Followers人数榜](#followers人数榜-1)
+            * [Following人数榜](#following人数榜-1)
+            * [Stars榜](#stars榜-1)
+            * [Reps榜](#reps榜-1)
+            * [Contribution榜](#contribution榜-1)
+         * [个人网站中顶级域名分布情况](#个人网站中顶级域名分布情况)
+         * [用户公布邮箱情况](#用户公布邮箱情况)
+         * [用户所在公司情况](#用户所在公司情况)
+      * [仓库](#仓库)
+         * [Stars榜](#stars榜-2)
+         * [Forks榜](#forks榜)
+         * [C](#c)
+         * [C  ](#c-1)
+         * [Java](#java)
+         * [Python](#python)
+         * [JavaScript](#javascript)
+         * [语言使用比例](#语言使用比例)
+
 ## 用户
 
 ### 全球用户榜单

@@ -1,5 +1,22 @@
 # Github分布式爬虫
 
+## 目录
+
+   * [Github分布式爬虫](#github分布式爬虫)
+      * [技术栈](#技术栈)
+      * [分布式示意图](#分布式示意图)
+      * [Features](#features)
+      * [分布式实现](#分布式实现)
+         * [请求队列](#请求队列)
+         * [调度器](#调度器)
+         * [去重集合](#去重集合)
+      * [反反爬虫策略](#反反爬虫策略)
+         * [随机User-Agent](#随机user-agent)
+         * [Cookies池](#cookies池)
+      * [项目结构](#项目结构)
+      * [使用与部署](#使用与部署)
+      * [Github数据分析](#github数据分析)
+
 ## 技术栈
 Scrapy、Redis、MongoDB
 
@@ -47,7 +64,7 @@ MongoDB负责最终数据的存储
 
 本地爬虫通常需要解决一个去重问题，通常使用的是数据库查询，爬取之前判断url是否请求过。分布式爬虫就是在这个的基础上共用一个去重集合，使用的是Redis的set。
 
-判断一个Request是否已经爬取过，这里不是使用url，因为不同的url可能代表的是同一种资源，比如：http://www.example.com/query?cat=222&id=111和http://www.example.com/query?cat=222&id=111事实表示的是一个东西。此外，发出的Request还可能与当时的Cookie有关，因为里面还会有用户信息。
+判断一个Request是否已经爬取过，这里不是使用url，因为不同的url可能代表的是同一种资源，比如：`http://www.example.com/query?cat=222&id=111`和`http://www.example.com/query?cat=222&id=111` 事实表示的是一个东西。此外，发出的Request还可能与当时的Cookie有关，因为里面还会有用户信息。
 
 这里采用的方案是生成一个Request的指纹，实际上是把request的url，method和指定的header使用sha1算法得到一个hash值。
 
@@ -90,8 +107,11 @@ MongoDB负责最终数据的存储
     └── useragent.py  #useragent 存放
 ```
 
+## 使用与部署
+
 ## Github数据分析
-查看[这里](./analysis/Analysis.md)
+
+点击[这里](./analysis/Analysis.md)查看
 
 
 
