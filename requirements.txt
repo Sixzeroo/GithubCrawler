@@ -15,7 +15,7 @@ hyperlink==18.0.0
 idna==2.6
 idna-ssl==1.0.1
 incremental==17.5.0
-Jinja2==2.10
+Jinja2>=2.10.1
 lxml==4.2.0
 MarkupSafe==1.0
 multidict==4.1.0
@@ -31,7 +31,7 @@ queuelib==1.5.0
 raven==6.6.0
 raven-aiohttp==0.7.0
 redis==2.10.6
-requests==2.18.4
+requests>=2.20.0
 ruamel.yaml==0.15.37
 Scrapy==1.5.0
 scrapy-redis==0.6.8
@@ -39,7 +39,7 @@ service-identity==17.0.0
 six==1.11.0
 strictyaml==0.11.7
 Twisted==17.9.0
-urllib3==1.22
+urllib3>=1.24.2
 w3lib==1.19.0
 yacron==0.7.0
 yarl==1.1.1
